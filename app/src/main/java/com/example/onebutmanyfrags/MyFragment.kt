@@ -12,21 +12,27 @@ import java.text.FieldPosition
 class MyFragment : Fragment() {
 
     companion object {
-        var myFragment: MyFragment? = null
-
-        fun getInstance(name: String): Fragment? {
-            if (myFragment == null) {
-                myFragment = MyFragment()
-            }
-            myFragment.apply {
-                val bundle = Bundle()
-                bundle.putString("NAME", name)
-                this!!.arguments = bundle
-            }
-            return myFragment
+//        var myFragment: MyFragment? = null
+//
+//        fun getInstance(name: String): Fragment? {
+//            if (myFragment == null) {
+//                myFragment = MyFragment()
+//            }
+//            myFragment.apply {
+//                val bundle = Bundle()
+//                bundle.putString("NAME", name)
+//                this!!.arguments = bundle
+//            }
+//            return myFragment
+//        }
+        fun getInstance( name: String) : MyFragment{
+        return  MyFragment().apply {
+            val bundle=Bundle()
+            bundle.putString("NAME", name)
+            arguments=bundle
         }
+}
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

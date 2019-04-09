@@ -12,19 +12,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val fragmentList = arrayListOf(
-            MyFragment().apply {
-                val bundle = Bundle().apply {
-                    putString("NAME", "Saumya Singh")
-                }
-                arguments = bundle
-            },
-            MyFragment().apply {
-                val bundle = Bundle().apply {
-                    putString("NAME", "TWINKLE ❤❤")
-                }
-                arguments = bundle
-            }
+//        val fragmentList = arrayListOf(
+//            MyFragment().apply {
+//                val bundle = Bundle().apply {
+//                    putString("NAME", "Saumya Singh")
+//                }
+//                arguments = bundle
+//            },
+//            MyFragment().apply {
+//                val bundle = Bundle().apply {
+//                    putString("NAME", "TWINKLE ❤❤")
+//                }
+//                arguments = bundle
+//            }
+//        )
+        val fragmentList= listOf(
+            MyFragment.getInstance("Saumya Singh"),
+            MyFragment.getInstance("Twinkle❤❤")
         )
 
         val pagerAdapter=PagerAdapter(supportFragmentManager, fragmentList)
